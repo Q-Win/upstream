@@ -8,9 +8,7 @@ class SearchService
   #   get_json("nearest.json?radius=6&location=#{zip}&fuel_type=ELEC,LPG")
   # end
 
-  # def get_stations_by_zip(zip)
-  #   get_json("nearest.json?api_key=WDusvifHHONRrjprW1g4h0U8qmd4g52PwUblxx3G&radius=6&location=#{zip}&fuel_type=ELEC,LPG")
-  # end
+
 
   def get_stations_by_zip(zip)
     get_json("nearest.json?api_key=#{ENV['api_key']}&radius=6&location=#{zip}&fuel_type=ELEC,LPG")
