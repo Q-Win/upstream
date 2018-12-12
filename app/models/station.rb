@@ -1,6 +1,6 @@
 class Station
 
-  attr_reader :name, :fuel_type, :distance, :access_times
+  attr_reader :name, :fuel_type, :distance, :access_times, :address
 
   def initialize(station_data)
     @name = station_data[:station_name]
