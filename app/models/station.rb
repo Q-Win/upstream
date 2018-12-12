@@ -3,7 +3,7 @@ class Station
   attr_reader :name, :url
 
   def initialize(station_data)
-    @name = nil
+    @name = 1
     @address = nil
     @fuel_type = nil
     @distance = nil

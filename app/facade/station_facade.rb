@@ -5,8 +5,9 @@ class StationFacade
     @_stations = nil
   end
 
-  def station_by_zip(zip)
-    station_results_by_zip.map do |station_data|
+  def stations_by_zip
+    stations_results_by_zip(@zip)[:fuel_stations].map do |station_data|
+      binding.pry
       Station.new(station_data)
     end
   end
@@ -14,8 +15,8 @@ class StationFacade
 
   private
 
-  def station_results_by_zip(zip)
-    @_stations ||= service.get_stations_by_zip(zip)
+  def stations_results_by_zip(zip)
+    @_stations ||= service.get_stations_by_zip(@zip)
   end
 
   def service
