@@ -1,5 +1,10 @@
-<h1> Here we go </h1>
-
+<h1> Stations within 6 miles of you </h1>
+<ul>
 <% @facade.stations_by_zip.each do |station| %>
-  <%station.name%>
+<li><%=station.name%></li>
+<li><%=station.fuel_type%></li>
+<li><%=station.distance%></li>
+<li><%=station.access_times%></li>
+<br>
 <%end%>
+</ul>

@@ -4,8 +4,16 @@ class SearchService
 
   end
 
+  # def get_stations_by_zip(zip)
+  #   get_json("nearest.json?radius=6&location=#{zip}&fuel_type=ELEC,LPG")
+  # end
+
+  # def get_stations_by_zip(zip)
+  #   get_json("nearest.json?api_key=WDusvifHHONRrjprW1g4h0U8qmd4g52PwUblxx3G&radius=6&location=#{zip}&fuel_type=ELEC,LPG")
+  # end
+
   def get_stations_by_zip(zip)
-    get_json("nearest.json?api_key=#{ENV["API_KEY"]}&radius=6&location=#{zip}&fuel_type=ELEC,LPG")
+    get_json("nearest.json?api_key=#{ENV['api_key']}&radius=6&location=#{zip}&fuel_type=ELEC,LPG")
   end
 
 
@@ -22,7 +30,7 @@ class SearchService
     Faraday.new(:url => 'https://developer.nrel.gov/api/alt-fuel-stations/v1/') do |faraday|
 
       faraday.adapter Faraday.default_adapter
-      faraday.headers['api_key'] = ENV["API_KEY"]
+      # faraday.headers['api_key'] = ENV["api_key"]
     end
   end
 

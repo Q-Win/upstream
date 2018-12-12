@@ -6,10 +6,11 @@ class StationFacade
   end
 
   def stations_by_zip
+    # binding.pry
     stations_results_by_zip(@zip)[:fuel_stations].map do |station_data|
-      binding.pry
       Station.new(station_data)
     end
+
   end
 
 
